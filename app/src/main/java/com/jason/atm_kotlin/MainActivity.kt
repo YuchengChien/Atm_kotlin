@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+//        startActivity(Intent(this, MaterialActivity::class.java))
         if(!login) {
             // open LoginActivity
             Intent(this, LoginActivity::class.java).apply {
