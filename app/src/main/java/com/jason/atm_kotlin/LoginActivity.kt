@@ -1,5 +1,6 @@
 package com.jason.atm_kotlin
 
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -19,6 +20,9 @@ class LoginActivity : AppCompatActivity() {
         var passwd = ed_passwd.text.toString()
         if(userid == "jack" && passwd == "1234") {
             Toast.makeText(this, " 登入成功", Toast.LENGTH_LONG).show()
+            intent.putExtra("LOGIN_USERID", userid)
+            intent.putExtra("LOGIN_PASSWD", passwd)
+            setResult(Activity.RESULT_OK, intent)
             finish()
         } else {
             AlertDialog.Builder(this)
